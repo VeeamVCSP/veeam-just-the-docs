@@ -59,14 +59,6 @@ function initNav() {
     e.preventDefault();
 
     mainHeader.classList.add('nav-open');
-
-    // Veeam - 16/12/2020
-    mainNav.classList.toggle('nav-open');
-    pageHeader.classList.toggle('nav-open');
-    navTrigger.classList.toggle('nav-open');
-    navTrigger.classList.toggle('c-hamburger-x');
-    // /Veeam
-
     searchInput.focus();
   });
   {%- endif %}
