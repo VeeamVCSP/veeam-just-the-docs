@@ -42,10 +42,14 @@ layout: table_wrappers
 
   <div class="side-bar">
     <div class="site-header">
-      <a href="{{ '/' | absolute_url }}" class="site-title lh-tight">{% include title.html %}</a>
-      <a href="#" id="menu-button" class="site-button">
-        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      <!-- Veeam - 16/12/2020 -->
+      <a href="{{ '/' | absolute_url }}">
+        <img class="veeam_logo_lp" src="{{ '/assets/images/Veeam_logo_peridot_2019.svg' | relative_url }}" alt="Veeam"/>
       </a>
+      <button id="menu-button" class="c-hamburger js-hamburger">
+        <span>menu</span>
+      </button>    
+      <!-- /Veeam - 16/12/2020 -->
     </div>
     <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
       {% if site.just_the_docs.collections %}
