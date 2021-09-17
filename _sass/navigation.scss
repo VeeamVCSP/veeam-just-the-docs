@@ -47,6 +47,9 @@
       &.active {
         font-weight: 600;
         text-decoration: none;
+        /* Veeam - 09/17/2021 */
+        color: $white !important;
+        /* Veeam - 09/17/2021 */
       }
 
       &:hover,
