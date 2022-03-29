@@ -1,6 +1,7 @@
 package.json
 package-lock.json
 _site
+_sass/custom/custom.scss
 assets/css/just-the-docs-default.scss
 assets/css/just-the-docs-light.scss
 assets/css/just-the-docs-dark.scss
