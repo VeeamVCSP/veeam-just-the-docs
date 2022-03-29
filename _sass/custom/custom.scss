@@ -1,133 +1,241 @@
-////
-//// Typography
-////
+// Custom overwrites for Veeam Best Practice Guides
 
-//$body-font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
-//$mono-font-family: "SFMono-Regular", Menlo, Consolas, Monospace;
-//$root-font-size: 16px;         // Base font-size for rems
-//$body-line-height: 1.4;
-//$content-line-height: 1.5;
-//$body-heading-line-height: 1.15;
+// from base.scss
+a:not([class]) {
+  text-decoration: none;
+  background-image: none;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 1px 1px;
 
-////
-//// Colors
-////
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
-//$white: #fff;
+.side-bar a {
+  color: $nav-child-link-color;
 
-//$grey-dk-000: #959396;
-//$grey-dk-100: #5c5962;
-//$grey-dk-200: #44434d;
-//$grey-dk-250: #302d36;
-//$grey-dk-300: #27262b;
+  &:hover {
+    text-decoration: underline;
+    background: none;
+  }
+}
 
-//$grey-lt-000: #f5f6fa;
-//$grey-lt-100: #eeebee;
-//$grey-lt-200: #ecebed;
-//$grey-lt-300: #e6e1e8;
+.nav-list-link.active {
+  color: #fff !important;
 
-//$purple-000: #7253ed;
-//$purple-100: #5e41d0;
-//$purple-200: #4e26af;
-//$purple-300: #381885;
+  &:hover {
+    text-decoration: none;
+  }
+}
 
-//$blue-000: #2c84fa;
-//$blue-100: #2869e6;
-//$blue-200: #264caf;
-//$blue-300: #183385;
+// from button.scss
+.btn {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 12px 30px 10px;
+  line-height: 1.5;
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 16px;
+  border: 0 none;
+  outline: 0;
+  background-color: $base-button-color;
+  border-radius: 99999px;
+  transition: background 0.15s ease-in-out;
 
-//$green-000: #41d693;
-//$green-100: #11b584;
-//$green-200: #009c7b;
-//$green-300: #026e57;
+  &:hover {
+    background: #00c73c;
+    text-decoration: none;
+  }
 
-//$yellow-000: #ffeb82;
-//$yellow-100: #fadf50;
-//$yellow-200: #f7d12e;
-//$yellow-300: #e7af06;
+  &:active {
+    background: #009e30;
+  }
+}
 
-//$red-000: #f77e7e;
-//$red-100: #f96e65;
-//$red-200: #e94c4c;
-//$red-300: #dd2e2e;
+// Additional Veeam classes
 
-//$body-background-color: $white;
-//$sidebar-color: $grey-lt-000;
-$sidebar-color: #004550;
-//$search-background-color: $white;
-//$table-background-color: $white;
-//$code-background-color: $grey-lt-000;
+// originally in base.scss
+img.veeam_logo_lp,
+img.veeam_logo_slogan_lp {
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  z-index: 101;
+  width: 188.23px;
+  height: 33px;
+}
 
-//$body-text-color: $grey-dk-100;
-//$body-heading-color: $grey-dk-300;
-//$search-result-preview-color: $grey-dk-000;
-//$nav-child-link-color: $grey-dk-100;
-$nav-child-link-color: #93EA20;
-//$link-color: $purple-000;
-$link-color: #00B336;
-//$btn-primary-color: $purple-100;
-//$base-button-color: #f7f7f7;
-$base-button-color: #00b336;
+@media screen and (max-width: $content-width - 1) {
+  img.veeam_logo_lp,
+  img.veeam_logo_slogan_lp {
+    position: static;
+    margin: 0 6px;
+  }
+}
 
-////
-//// Spacing
-////
+@media screen and (max-width: 480px) {
+  img.veeam_logo_lp,
+  img.veeam_logo_slogan_lp {
+    position: static;
+    width: 142.59px;
+    height: 25px;
+  }
+}
 
-//$spacing-unit: 1rem; // 1rem == 16px
+// originally in button.scss
+/*********************** hamburger - s ***************************/
+.c-hamburger {
+  background-color: transparent;
+  /*float: right;*/
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  margin-top: -5px;
+  padding: 0;
+  width: 35px;
+  height: 30px;
 
-//$spacers: (
-//sp-0: 0,
-//sp-1: $spacing-unit * 0.25,
-//sp-2: $spacing-unit * 0.5,
-//sp-3: $spacing-unit * 0.75,
-//sp-4: $spacing-unit,
-//sp-5: $spacing-unit * 1.5,
-//sp-6: $spacing-unit * 2,
-//sp-7: $spacing-unit * 2.5,
-//sp-8: $spacing-unit * 3,
-//sp-9: $spacing-unit * 3.5,
-//sp-10: $spacing-unit * 4
-//);
+  width: 24px;
 
-//$sp-1: map-get($spacers, sp-1); // 0.25 rem == 4px
-//$sp-2: map-get($spacers, sp-2); // 0.5  rem == 8px
-//$sp-3: map-get($spacers, sp-3); // 0.75 rem == 12px
-//$sp-4: map-get($spacers, sp-4); // 1    rem == 16px
-//$sp-5: map-get($spacers, sp-5); // 1.5  rem == 24px
-//$sp-6: map-get($spacers, sp-6); // 2    rem == 32px
-//$sp-7: map-get($spacers, sp-7); // 2.5  rem == 40px
-//$sp-8: map-get($spacers, sp-8); // 3    rem == 48px
-//$sp-9: map-get($spacers, sp-9); // 4    rem == 48px
-//$sp-10: map-get($spacers, sp-10); // 4.5  rem == 48px
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
 
-////
-//// Borders
-////
+  display: none;
+}
 
-//$border: 1px solid;
-//$border-radius: 4px;
-//$border-color: $grey-lt-100;
+.c-hamburger:focus {
+  outline: none;
+}
 
-////
-//// Grid system
-////
+.c-hamburger span,
+.c-hamburger span::before,
+.c-hamburger span::after {
+  background: #93ea20;
+}
 
-//$gutter-spacing: $sp-6;
-//$gutter-spacing-sm: $sp-4;
-//$nav-width: 264px;
-//$nav-width-md: 248px;
-//$content-width: 800px;
-//$header-height: 60px;
-//$search-results-width: 500px;
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  right: 0;
+  height: 4px;
+}
 
-////
-//// Media queries in pixels
-////
+.c-hamburger span::before {
+  transition-property: top, transform;
+  top: -8px;
+}
 
-//$media-queries: (
-//xs: 320px,
-//sm: 500px,
-//md: $content-width,
-//lg: $content-width + $nav-width,
-//xl: 1400px
-//);
+.c-hamburger span::before,
+.c-hamburger span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  content: "";
+}
+
+.c-hamburger span::after {
+  transition-property: bottom, transform;
+  bottom: -8px;
+}
+
+.c-hamburger.c-hamburger-x span::after,
+.c-hamburger.c-hamburger-x span::before {
+  transition-delay: 0s, 0.3s;
+}
+
+.c-hamburger.c-hamburger-x span {
+  background: none;
+}
+
+.c-hamburger.c-hamburger-x span::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.c-hamburger.c-hamburger-x span::after {
+  transform: rotate(45deg);
+  bottom: 0;
+}
+
+@media screen and (max-width: $content-width - 1) {
+  .c-hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .c-hamburger {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+}
+
+/*********************** hamburger - e ***************************/
+
+// Updates for 0.2.7 - Stefan Zimmermann 09.04.2020
+
+// Remove bottom border from navigation
+.site-header {
+  @include mq(md) {
+    border-bottom: none;
+  }
+}
+
+// Updates for automated numbering in the navigation
+// Stefan Zimmermann, 16.04.2020; Updates to new class-names 21.12.2020
+.nav-list {
+  counter-reset: section;
+}
+
+.numbered-link::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
+
+  position: relative;
+  color: $nav-child-link-color;
+}
+
+.active.numbered-link::before {
+  font-weight: bold;
+}
+
+// Overriding menu width and location, putting it all to the left
+// Stefan Zimmermann, 30.04.2020 & 21.12.2020
+.side-bar {
+  @include mq(lg) {
+    width: $nav-width;
+    min-width: $nav-width;
+  }
+}
+
+.main {
+  @include mq(lg) {
+    position: relative;
+    max-width: $content-width;
+    margin-left: $nav-width;
+  }
+}
