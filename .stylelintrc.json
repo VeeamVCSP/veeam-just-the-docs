@@ -8,7 +8,6 @@
   "extends": ["stylelint-config-primer", "stylelint-config-prettier"],
   "plugins": ["stylelint-prettier"],
   "rules": {
-    "prettier/prettier": true,
-    "linebreaks": "windows"
+    "prettier/prettier": true
   }
 }
